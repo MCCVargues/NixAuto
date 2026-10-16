@@ -13,14 +13,14 @@
       ];
       auto-optimise-store = true;
       # Add the project cache here once it exists (see README "Binary cache"):
-      # extra-substituters = [ "https://<your-cache>.cachix.org" ];
-      # extra-trusted-public-keys = [ "<your-cache>.cachix.org-1:..." ];
+      extra-substituters = [ "https://mccv.cachix.org" ];
+      extra-trusted-public-keys = [ "mccv.cachix.org-1:ye019q3sF5R8uWm6KZniEyLO+Bu4wWohVGN8p4fmgSI=" ];
     };
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
-    };
+    };s
   };
 
   # NetworkManager drives both Wi-Fi (workshop/home) and the LTE modem
