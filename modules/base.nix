@@ -20,7 +20,7 @@
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
-    };s
+    };
   };
 
   # NetworkManager drives both Wi-Fi (workshop/home) and the LTE modem
