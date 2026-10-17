@@ -37,8 +37,12 @@ in
       enable = true;
       user = "kiosk";
       program = cfg.program;
+      # -d: ask clients for server-side decorations, which cage doesn't draw.
+      # Without it Qt adds its own title bar and the shell looks like a window.
+      extraArguments = [ "-d" ];
       environment = {
         QT_QPA_PLATFORM = "wayland";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         XKB_DEFAULT_LAYOUT = "us";
       };
     };

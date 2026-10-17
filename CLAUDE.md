@@ -67,3 +67,10 @@ Qt sends its warnings to journald and they're lost in a container.
 - QML files live in `shell/qml/` but are aliased to the module root
   (`QT_RESOURCE_ALIAS`). Without the alias, the implicit directory import shadows the
   `Theme` singleton and every `Theme.*` is `undefined`.
+- cage must run with `-d`, and the kiosk sets `QT_WAYLAND_DISABLE_WINDOWDECORATION=1`.
+  Without them, Qt draws its own title bar (minimise/maximise/close) and the home
+  screen looks like a window.
+- To check what the Pi really shows, run the shell under cage headless:
+  `WLR_BACKENDS=headless WLR_RENDERER=pixman WLR_LIBINPUT_NO_DEVICES=1 cage -d -- sh -c '<shell> & sleep 6; grim out.png'`
+  (cage, grim and wlr-randr come from nixpkgs). Xvfb screenshots don't show this
+  problem.
